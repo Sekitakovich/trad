@@ -1,0 +1,8 @@
+function getID($handle,$code)
+{
+    $query = sprintf("select * from brand where vf=true and code='%s'",$code);
+    $sr = pg_query($handle,$query);
+    $so = pg_fetch_array($sr);
+    return($so['id']);
+}
+

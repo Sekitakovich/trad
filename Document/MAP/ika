@@ -1,0 +1,8 @@
+function getNation($handle,$code)
+{
+    $query = sprintf("select * from nation where vf=true and code3='%s'",$code);
+    $sr = pg_query($handle,$query);
+    $so = pg_fetch_array($sr);
+    return($so['id']);
+}
+

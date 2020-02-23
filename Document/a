@@ -1,0 +1,256 @@
+2,'AFGHANISTAN','Afghani','AFN',971
+3,'ALBANIA','Lek','ALL',8
+4,'ALGERIA','Algerian Dinar','DZD',12
+5,'AMERICAN SAMOA','US Dollar','USD',840
+6,'ANDORRA','Euro','EUR',978
+7,'ANGOLA','Kwanza','AOA',973
+8,'ANGUILLA','East Caribbean Dollar','XCD',951
+9,'ANTIGUA AND BARBUDA','East Caribbean Dollar','XCD',951
+10,'ARGENTINA','Argentine Peso','ARS',32
+11,'ARMENIA','Armenian Dram','AMD',51
+12,'ARUBA','Aruban Guilder','AWG',533
+13,'AUSTRALIA','Australian Dollar','AUD',36
+14,'AUSTRIA','Euro','EUR',978
+15,'AZERBAIJAN','Azerbaijanian Manat','AZN',944
+16,'BAHAMAS','Bahamian Dollar','BSD',44
+17,'BAHRAIN','Bahraini Dinar','BHD',48
+18,'BANGLADESH','Taka','BDT',50
+19,'BARBADOS','Barbados Dollar','BBD',52
+20,'BELARUS','Belarussian Ruble','BYR',974
+21,'BELGIUM','Euro','EUR',978
+22,'BELIZE','Belize Dollar','BZD',84
+23,'BENIN','CFA Franc BCEAO a?','XOF',952
+24,'BERMUDA','Bermudian Dollar (customarily known as Bermuda Dollar)','BMD',60
+25,'BHUTAN','Ngultrum','BTN',64
+26,'BHUTAN','Indian Rupee Ngultrum','INR',356
+27,'BOLIVIA','Boliviano','BOB',68
+28,'BOLIVIA','Mvdol','BOV',984
+29,'BOSNIA AND HERZEGOVINA','Convertible Marks','BAM',977
+30,'BOTSWANA','Pula','BWP',72
+31,'BOUVET ISLAND','Norwegian Krone','NOK',578
+32,'BRAZIL','Brazilian Real','BRL',986
+33,'BRITISH INDIAN OCEAN TERRITORY','US Dollar','USD',840
+34,'BRUNEI DARUSSALAM','Brunei Dollar','BND',96
+35,'BULGARIA','Bulgarian Lev','BGN',975
+36,'BURKINA FASO','CFA Franc BCEAO a?','XOF',952
+37,'BURUNDI','Burundi Franc','BIF',108
+38,'CAMBODIA','Riel','KHR',116
+39,'CAMEROON','CFA Franc BEAC a?!','XAF',950
+40,'CANADA','Canadian Dollar','CAD',124
+41,'CAPE VERDE','Cape Verde Escudo','CVE',132
+42,'CAYMAN ISLANDS','Cayman Islands Dollar','KYD',136
+43,'CENTRAL AFRICAN REPUBLIC','CFA Franc BEAC a?!','XAF',950
+44,'CHAD','CFA Franc BEAC a?!','XAF',950
+45,'CHILE','Chilean Peso','CLP',152
+46,'CHILE','Unidades de fomento','CLF',990
+47,'CHINA','Yuan Renminbi','CNY',156
+48,'CHRISTMAS ISLAND','Australian Dollar','AUD',36
+49,'COCOS (KEELING) ISLANDS','Australian Dollar','AUD',36
+50,'COLOMBIA','Colombian Peso','COP',170
+51,'COLOMBIA','Unidad de Valor Real','COU',970
+52,'COMOROS','Comoro Franc','KMF',174
+53,'CONGO','CFA Franc BEAC a?!','XAF',950
+54,'CONGO, THE DEMOCRATIC REPUBLIC OF','Franc Congolais','CDF',976
+55,'COOK ISLANDS','New Zealand Dollar','NZD',554
+56,'COSTA RICA','Costa Rican Colon','CRC',188
+57,'CA”TE D''IVOIRE','CFA Franc BCEAO a?','XOF',952
+58,'CROATIA','Croatian Kuna','HRK',191
+59,'CUBA','Cuban Peso','CUP',192
+60,'CYPRUS','Cyprus Pound','CYP',196
+61,'CYPRUS','Euro','EUR',978
+62,'CZECH REPUBLIC','Czech Koruna','CZK',203
+63,'DENMARK','Danish Krone','DKK',208
+64,'DJIBOUTI','Djibouti Franc','DJF',262
+65,'DOMINICA','East Caribbean Dollar','XCD',951
+66,'DOMINICAN REPUBLIC','Dominican Peso','DOP',214
+67,'ECUADOR','US Dollar','USD',840
+68,'EGYPT','Egyptian Pound','EGP',818
+69,'EL SALVADOR','El Salvador Colon','SVC',222
+70,'EL SALVADOR','US Dollar','USD',840
+71,'EQUATORIAL GUINEA','CFA Franc BEAC a?!','XAF',950
+72,'ERITREA','Nakfa','ERN',232
+73,'ESTONIA','Kroon','EEK',233
+74,'ETHIOPIA','Ethiopian Birr','ETB',230
+75,'FALKLAND ISLANDS (MALVINAS)','Falkland Islands Pound','FKP',238
+76,'FAROE ISLANDS','Danish Krone','DKK',208
+77,'FIJI','Fiji Dollar','FJD',242
+78,'FINLAND','Euro','EUR',978
+79,'FRANCE','Euro','EUR',978
+80,'FRENCH GUIANA','Euro','EUR',978
+81,'FRENCH POLYNESIA','CFP Franc','XPF',953
+82,'FRENCH SOUTHERN TERRITORIES','Euro','EUR',978
+83,'GABON','CFA Franc BEAC a?!','XAF',950
+84,'GAMBIA','Dalasi','GMD',270
+85,'GEORGIA','Lari','GEL',981
+86,'GERMANY','Euro','EUR',978
+87,'GHANA','Ghana Cedi','GHS',936
+88,'GIBRALTAR','Gibraltar Pound','GIP',292
+89,'GREECE','Euro','EUR',978
+90,'GREENLAND','Danish Krone','DKK',208
+91,'GRENADA','East Caribbean Dollar','XCD',951
+92,'GUADELOUPE','Euro','EUR',978
+93,'GUAM','US Dollar','USD',840
+94,'GUATEMALA','Quetzal','GTQ',320
+95,'GUINEA','Guinea Franc','GNF',324
+96,'GUINEA-BISSAU','Guinea-Bissau Peso','GWP',624
+97,'GUINEA-BISSAU','CFA Franc BCEAO a?','XOF',952
+98,'GUYANA','Guyana Dollar','GYD',328
+99,'HAITI','Gourde','HTG',332
+100,'HAITI','US Dollar','USD',840
+101,'HEARD ISLAND AND MCDONALD ISLANDS','Australian Dollar','AUD',36
+102,'HOLY SEE (VATICAN CITY STATE)','Euro','EUR',978
+103,'HONDURAS','Lempira','HNL',340
+104,'HONG KONG','Hong Kong Dollar','HKD',344
+105,'HUNGARY','Forint','HUF',348
+106,'ICELAND','Iceland Krona','ISK',352
+107,'INDIA','Indian Rupee','INR',356
+108,'INDONESIA','Rupiah','IDR',360
+109,'INTERNATIONAL MONETARY FUND (I.M.F)','SDR','XDR',960
+110,'IRAN, ISLAMIC REPUBLIC OF','Iranian Rial','IRR',364
+111,'IRAQ','Iraqi Dinar','IQD',368
+112,'IRELAND','Euro','EUR',978
+113,'ISRAEL','New Israeli Sheqel','ILS',376
+114,'ITALY','Euro','EUR',978
+115,'JAMAICA','Jamaican Dollar','JMD',388
+116,'JAPAN','Yen','JPY',392
+117,'JORDAN','Jordanian Dinar','JOD',400
+118,'KAZAKHSTAN','Tenge','KZT',398
+119,'KENYA','Kenyan Shilling','KES',404
+120,'KIRIBATI','Australian Dollar','AUD',36
+121,'KOREA, DEMOCRATIC PEOPLE''S REPUBLIC OF','North Korean Won','KPW',408
+122,'KOREA, REPUBLIC OF','Won','KRW',410
+123,'KUWAIT','Kuwaiti Dinar','KWD',414
+124,'KYRGYZSTAN','Som','KGS',417
+125,'LAO PEOPLE''S DEMOCRATIC REPUBLIC','Kip','LAK',418
+126,'LATVIA','Latvian Lats','LVL',428
+127,'LEBANON','Lebanese Pound','LBP',422
+128,'LESOTHO','Rand','ZAR',710
+129,'LESOTHO','Loti','LSL',426
+130,'LIBERIA','Liberian Dollar','LRD',430
+131,'LIBYAN ARAB JAMAHIRIYA','Libyan Dinar','LYD',434
+132,'LIECHTENSTEIN','Swiss Franc','CHF',756
+133,'LITHUANIA','Lithuanian Litas','LTL',440
+134,'LUXEMBOURG','Euro','EUR',978
+135,'MACAO','Pataca','MOP',446
+136,'MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF','Denar','MKD',807
+137,'MADAGASCAR','Malagasy Ariary','MGA',969
+138,'MALAWI','Kwacha','MWK',454
+139,'MALAYSIA','Malaysian Ringgit','MYR',458
+140,'MALDIVES','Rufiyaa','MVR',462
+141,'MALI','CFA Franc BCEAO a?','XOF',952
+142,'MALTA','Maltese Lira','MTL',470
+143,'MALTA','Euro','EUR',978
+144,'MARSHALL ISLANDS','US Dollar','USD',840
+145,'MARTINIQUE','Euro','EUR',978
+146,'MAURITANIA','Ouguiya','MRO',478
+147,'MAURITIUS','Mauritius Rupee','MUR',480
+148,'MAYOTTE','Euro','EUR',978
+149,'MEXICO','Mexican Peso','MXN',484
+150,'MEXICO','Mexican Unidad de Inversion (UDI)','MXV',979
+151,'MICRONESIA, FEDERATED STATES OF','US Dollar','USD',840
+152,'MOLDOVA, REPUBLIC OF','Moldovan Leu','MDL',498
+153,'MONACO','Euro','EUR',978
+154,'MONGOLIA','Tugrik','MNT',496
+155,'MONTENEGRO','Euro','EUR',978
+156,'MONTSERRAT','East Caribbean Dollar','XCD',951
+157,'MOROCCO','Moroccan Dirham','MAD',504
+158,'MOZAMBIQUE','Metical','MZN',943
+159,'MYANMAR','Kyat','MMK',104
+160,'NAMIBIA','Rand','ZAR',710
+161,'NAMIBIA','Namibia Dollar','NAD',516
+162,'NAURU','Australian Dollar','AUD',36
+163,'NEPAL','Nepalese Rupee','NPR',524
+164,'NETHERLANDS','Euro','EUR',978
+165,'NETHERLANDS ANTILLES','Netherlands Antillian Guilder','ANG',532
+166,'NEW CALEDONIA','CFP Franc','XPF',953
+167,'NEW ZEALAND','New Zealand Dollar','NZD',554
+168,'NICARAGUA','Cordoba Oro','NIO',558
+169,'NIGER','CFA Franc BCEAO a?','XOF',952
+170,'NIGERIA','Naira','NGN',566
+171,'NIUE','New Zealand Dollar','NZD',554
+172,'NORFOLK ISLAND','Australian Dollar','AUD',36
+173,'NORTHERN MARIANA ISLANDS','US Dollar','USD',840
+174,'NORWAY','Norwegian Krone','NOK',578
+175,'OMAN','Rial Omani','OMR',512
+176,'PAKISTAN','Pakistan Rupee','PKR',586
+177,'PALAU','US Dollar','USD',840
+178,'PANAMA','Balboa','PAB',590
+179,'PANAMA','US Dollar','USD',840
+180,'PAPUA NEW GUINEA','Kina','PGK',598
+181,'PARAGUAY','Guarani','PYG',600
+182,'PERU','Nuevo Sol','PEN',604
+183,'PHILIPPINES','Philippine Peso','PHP',608
+184,'PITCAIRN','New Zealand Dollar','NZD',554
+185,'POLAND','Zloty','PLN',985
+186,'PORTUGAL','Euro','EUR',978
+187,'PUERTO RICO','US Dollar','USD',840
+188,'QATAR','Qatari Rial','QAR',634
+189,'RA‰UNION','Euro','EUR',978
+190,'ROMANIA','New Leu','RON',946
+191,'RUSSIAN FEDERATION','Russian Ruble','RUB',643
+192,'RWANDA','Rwanda Franc','RWF',646
+193,'SAINT HELENA','Saint Helena Pound','SHP',654
+194,'SAINT KITTS AND NEVIS','East Caribbean Dollar','XCD',951
+195,'SAINT LUCIA','East Caribbean Dollar','XCD',951
+196,'SAINT PIERRE AND MIQUELON','Euro','EUR',978
+197,'SAINT VINCENT AND THE GRENADINES','East Caribbean Dollar','XCD',951
+198,'SAMOA','Tala','WST',882
+199,'SAN MARINO','Euro','EUR',978
+200,'SAO TOME AND PRINCIPE','Dobra','STD',678
+201,'SAUDI ARABIA','Saudi Riyal','SAR',682
+202,'SENEGAL','CFA Franc BCEAO a?','XOF',952
+203,'SERBIA','Serbian Dinar','RSD',941
+204,'SEYCHELLES','Seychelles Rupee','SCR',690
+205,'SIERRA LEONE','Leone','SLL',694
+206,'SINGAPORE','Singapore Dollar','SGD',702
+207,'SLOVAKIA','Slovak Koruna','SKK',703
+208,'SLOVENIA','Euro','EUR',978
+209,'SOLOMON ISLANDS','Solomon Islands Dollar','SBD',90
+210,'SOMALIA','Somali Shilling','SOS',706
+211,'SOUTH AFRICA','Rand','ZAR',710
+212,'SPAIN','Euro','EUR',978
+213,'SRI LANKA','Sri Lanka Rupee','LKR',144
+214,'SUDAN','Sudanese Pound','SDG',938
+215,'SURINAME','Surinam Dollar','SRD',968
+216,'SVALBARD AND JAN MAYEN','Norwegian Krone','NOK',578
+217,'SWAZILAND','Lilangeni','SZL',748
+218,'SWEDEN','Swedish Krona','SEK',752
+219,'SWITZERLAND','Swiss Franc','CHF',756
+220,'SWITZERLAND','WIR Franc','CHW',948
+221,'SWITZERLAND','WIR Euro','CHE',947
+222,'SYRIAN ARAB REPUBLIC','Syrian Pound','SYP',760
+223,'TAIWAN, PROVINCE OF CHINA','New Taiwan Dollar','TWD',901
+224,'TAJIKISTAN','Somoni','TJS',972
+225,'TANZANIA, UNITED REPUBLIC OF','Tanzanian Shilling','TZS',834
+226,'THAILAND','Baht','THB',764
+227,'TIMOR-LESTE','US Dollar','USD',840
+228,'TOGO','CFA Franc BCEAO a?','XOF',952
+229,'TOKELAU','New Zealand Dollar','NZD',554
+230,'TONGA','Pa''anga','TOP',776
+231,'TRINIDAD AND TOBAGO','Trinidad and Tobago Dollar','TTD',780
+232,'TUNISIA','Tunisian Dinar','TND',788
+233,'TURKEY','New Turkish Lira','TRY',949
+234,'TURKMENISTAN','Manat','TMM',795
+235,'TURKS AND CAICOS ISLANDS','US Dollar','USD',840
+236,'TUVALU','Australian Dollar','AUD',36
+237,'UGANDA','Uganda Shilling','UGX',800
+238,'UKRAINE','Hryvnia','UAH',980
+239,'UNITED ARAB EMIRATES','UAE Dirham','AED',784
+240,'UNITED KINGDOM','Pound Sterling','GBP',826
+241,'UNITED STATES','US Dollar','USD',840
+242,'UNITED STATES','US Dollar (Same day)','USS',998
+243,'UNITED STATES','US Dollar (Next day)','USN',997
+244,'UNITED STATES MINOR OUTLYING ISLANDS','US Dollar','USD',840
+245,'URUGUAY','Peso Uruguayo','UYU',858
+246,'URUGUAY','Uruguay Peso en Unidades Indexadas','UYI',940
+247,'UZBEKISTAN','Uzbekistan Sum','UZS',860
+248,'VANUATU','Vatu','VUV',548
+249,'VENEZUELA','Bolivar Fuerte','VEF',937
+250,'VIET NAM','Dong','VND',704
+251,'VIRGIN ISLANDS (BRITISH)','US Dollar','USD',840
+252,'VIRGIN ISLANDS (U.S.)','US Dollar','USD',840
+253,'WALLIS AND FUTUNA','CFP Franc','XPF',953
+254,'WESTERN SAHARA','Moroccan Dirham','MAD',504
+255,'YEMEN','Yemeni Rial','YER',886
+256,'ZAMBIA','Kwacha','ZMK',894
+257,'ZIMBABWE','Zimbabwe Dollar','ZWD',716

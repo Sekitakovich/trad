@@ -1,0 +1,40 @@
+<?php
+include("../hpfmaster.inc");
+if($handle=pg_connect($pgconnect)){
+  pg_query($handle,"begin");
+//-----------------------------------------------------------------------------
+    $qq = array();
+    $qq[] = sprintf("select brand.id as bid,brand.name as bname,brand.estimate,season.stype,season.name as sname,season.year,sum(purchase.amount*currency.rate) as psum");
+    $qq[] = sprintf("from purchase join (brand join currency on brand.currency=currency.id) on purchase.brand=brand.id join season on purchase.season=season.id");
+    $qq[] = sprintf("where purchase.vf=true");
+    $qq[] = sprintf("group by brand.id,brand.name,brand.estimate,season.stype,season.name,season.year");
+    $qq[] = sprintf("order by season.year desc");
+    $query = implode(" ",$qq);
+
+//    printf("Query = [%s]\n",$query);
+
+    $qr = pg_query($handle,$query);
+    $qo = pg_fetch_all($qr);
+    $qs = pg_num_rows($qr);
+    for($a=0; $a<$qs; $a++){
+	$ooo = $qo[$a];
+	$psum = $ooo['psum'];
+	printf("%d: [%s %s] (%s) -> %d\n",$a,$ooo['bname'],$ooo['sname'],$ooo['estimate'],$ooo['psum']);
+	$year = $ooo['year'];
+	$estimate = getPGSQLarray($ooo['estimate']);
+	$query = sprintf("select estimate.* from estimate where id='%d'",$estimate[$ooo['stype']-1]);
+	$er = pg_query($handle,$query);
+	$eo = pg_fetch_assoc($er);
+	$pays = $eo['pays'];
+	$yoffset = getPGSQLarray($eo['yoffset']);
+	$month = getPGSQLarray($eo['month']);
+	$percentage = getPGSQLarray($eo['percentage']);
+	for($b=0; $b<$pays; $b++){
+	    printf("\t%d: Y=%d m=%d p=%d -> %d\n",$b+1,$year+$yoffset[$b],$month[$b],$percentage[$b],($psum/100)*$percentage[$b]);
+	}
+    }
+//-----------------------------------------------------------------------------
+  pg_query($handle,"commit");
+  pg_close($handle);
+}
+?>
