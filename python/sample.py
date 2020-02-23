@@ -9,7 +9,7 @@ class Session(object):
 
         self.standby: bool = False
         try:
-            self.pgstring: str = 'host=localhost port=5432 dbname=trad user=postgres password=postgres'
+            self.pgstring: str = 'host=localhost port=5432 dbname=hpfmaster user=postgres password=postgres'
             self.handle = psycopg2.connect(self.pgstring)
             self.cursor = self.handle.cursor(cursor_factory=psycopg2.extras.DictCursor)
         except psycopg2.Error as e:
@@ -17,15 +17,24 @@ class Session(object):
         else:
             self.standby = True
 
-            self.shopList: List[int] = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 40, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60]
+            self.shopList: List[int] = [654, 53, 524, 54, 655, 94, 183, 55, 56, 589, 10, 346, 428, 640, 83, 237, 236, 682, 77, 156, 131, 76]
 
-    def member(self) -> List[any]:
+    def history(self):
 
-        ooo = ','.join(map(str, self.shopList))
-        query: str = "select id,name from shop where vf=true and id in (%s) order by id desc" % ooo
-        # print(query)
-        result = self.exec(query=query)
-        return result
+        top: str = '2018-03-01'
+        end: str = '2019-09-30'
+        # ooo = ','.join(map(str, self.shopList))
+
+        for shop in self.shopList:
+
+            query: str = "select * from daily where vf=true and shop=%d and yyyymmdd between '%s' and '%s' order by yyyymmdd" % (shop, top, end)
+            # print(query)
+            result = self.exec(query=query)
+            for row in result:
+                k = row.keys()
+                for name in k:
+                    value = row[name]
+                    print('%s = [%s]' % (name, value))
 
     def exec(self, *, query: str) -> List[any]:
         result: List[any] = []
@@ -44,5 +53,4 @@ if __name__ == '__main__':
     session = Session()
     if session.standby:
 
-        ooo = session.member()
-        print(ooo)
+        session.history()

@@ -3,7 +3,7 @@ import csv
 with open('a.csv', 'rt') as f:
     reader = csv.reader(f, delimiter='\t')
 
-    tako = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 42, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62]
+    tako = [654, 53, 524, 54, 655, 94, 183, 55, 56, 589, 10, 346, 428, 640, 83, 237, 236, 682, 77, 156, 131, 76]
     real = [x - 2 for x in tako]
 
     print(real)

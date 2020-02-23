@@ -53,14 +53,25 @@ if($handle=pg_connect($pgconnect)){
 				$id = $qo['id'];
 			}
 			else{
-				$query = sprintf("select max(id) from daily");
+
+			    $query = sprintf("select count(*),min(id) from daily where id>0 and vf=false");
 				$qr = pg_query($handle,$query);
 ?><!-- <?php printf("Query (%d) [ %s ]\n",$qr,$query); ?> --><?php
 				$qo = pg_fetch_array($qr);
-				$id=$qo['max']+1;
-				$query = sprintf("insert into daily(id,shop,yyyymmdd) values('%d','%d','%d-%d-%d')",$id,$thisShop['id'],$yy,$mm,$dd);
-				$qr = pg_query($handle,$query);
+                $count = $qo['count'];
+                if($count){
+    				$id=$qo['min'];
+                }
+                else{
+    				$query = sprintf("select max(id) from daily");
+	    			$qr = pg_query($handle,$query);
 ?><!-- <?php printf("Query (%d) [ %s ]\n",$qr,$query); ?> --><?php
+		    		$qo = pg_fetch_array($qr);
+			    	$id=$qo['max']+1;
+				    $query = sprintf("insert into daily(id,shop,yyyymmdd) values('%d','%d','%d-%d-%d')",$id,$thisShop['id'],$yy,$mm,$dd);
+			    	$qr = pg_query($handle,$query);
+?><!-- <?php printf("Query (%d) [ %s ]\n",$qr,$query); ?> --><?php
+                }
 			}
 			$set = array();
 			$set[] = sprintf("tbase='%f'",$target[$a]);
@@ -71,6 +82,7 @@ if($handle=pg_connect($pgconnect)){
 			$set[] = sprintf("ua='%s'",pg_escape_string($_SERVER['HTTP_USER_AGENT']));
 			$set[] = sprintf("ipaddress='%s'",$_SERVER['REMOTE_ADDR']);
 			$set[] = sprintf("dtp='%s'",$thisShop['dtp']); // 2019-11-02
+			$set[] = sprintf("vf=true"); // 2020-02-24
 			$query = sprintf("update daily set %s where id='%d'",implode(",",$set),$id);
 			$qr = pg_query($handle,$query);
 ?><!-- <?php printf("Query (%d) [ %s ]\n",$qr,$query); ?> --><?php
