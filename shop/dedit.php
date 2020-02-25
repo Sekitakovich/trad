@@ -16,7 +16,7 @@ if($handle=pg_connect($pgconnect)){
 	$whoami = getStaffInfo($handle);
 	pg_query($handle,"begin");
 	$thisMode = isset($_REQUEST['mode'])? $_REQUEST['mode']:'';
-	
+
 	switch($thisMode){
 //--------------------------------------------------------------------
 	case "psave":
@@ -29,17 +29,14 @@ if($handle=pg_connect($pgconnect)){
 		$last = $_REQUEST['last'];
 		$result = $_REQUEST['result'];
 		$book = $_REQUEST['book'];
-		$apre = $_REQUEST['apre'];
 		$member = $_REQUEST['member'];
 		$visitor = $_REQUEST['visitor'];
 		$open = $_REQUEST['open'];
 		$modify = $_REQUEST['modify'];
 		$note =$_REQUEST['note'];
-		
+
 		$mlot = $_REQUEST['mlot'];
 		$myen = $_REQUEST['myen'];
-			
-		$dtp = $_REQUEST['dtp'];
 
 		for($a=0,$b=$days,$dd=1; $b--; $a++,$dd++){
 			if($modify[$a]=='t'){
@@ -72,12 +69,10 @@ if($handle=pg_connect($pgconnect)){
 				$set[] = sprintf("target='%d'",$target[$a]*$rate);
 				$set[] = sprintf("last='%d'",$last[$a]*$rate);
 				$set[] = sprintf("book='%d'",$book[$a]*$rate);
-				$set[] = sprintf("apay='%d'",$apre[$a]*$rate);
 				$set[] = sprintf("member='%d'",$member[$a]);
 
 				$set[] = sprintf("mlot='%d'",$mlot[$a]);
 				$set[] = sprintf("myen='%d'",$myen[$a]);
-				$set[] = sprintf("dtp='%s'",$dtp);
 
 				$set[] = sprintf("visitor='%d'",$visitor[$a]);
 				$set[] = sprintf("open=%s",isset($open[$a])? "false":"true");
@@ -94,7 +89,6 @@ if($handle=pg_connect($pgconnect)){
 		break;
 //--------------------------------------------------------------------
 	default:
-	$id = 0;
 	$__ym = date("Y-m");
 	$tt = explode("-",$__ym);
 	if(isset($_REQUEST['exec'])){
@@ -102,16 +96,10 @@ if($handle=pg_connect($pgconnect)){
 		$ym = explode("-",$_REQUEST['ym']);
 	}
 	else{
+		$id = 0;
 		$ym = $tt;
 	}
-	$dtp = '';
-	if($id){
-		$query = sprintf("select dtp from shop where id=%d", $id); // printf("[ %s ]",$query);
-		$qr = pg_query($handle,$query);
-		$qo = pg_fetch_array($qr)[0]; // var_dump($qo);
-		$dtp = $qo; // printf("dtp = [%s]",$dtp);
-	}
-	
+
 ?>
 <script language="JavaScript" type="text/javascript">
 function editStart(F)
@@ -204,17 +192,17 @@ function setSum(F,offset)
 	var bSum = 0;
 	var mSum = 0;
 	var vSum = 0;
-	
+
 	var mYSum = 0;
 	var mLSum = 0;
 
 	var dst = 'modify['+offset+']';
 	F.elements[dst].value = 't';
-	
+
 	for(a=0,d=1; a<days; a++,d++){
 //
 		var dst = 'target['+a+']';
-		var val = parseInt(F.elements[dst].value); 
+		var val = parseInt(F.elements[dst].value);
 		if(isNaN(val)){
 			alert(d+'日: 予算に有効な数値を入力してください');
 			F.elements[dst].value = 0;
@@ -225,7 +213,7 @@ function setSum(F,offset)
 		}
 //
 		var dst = 'last['+a+']';
-		var val = parseInt(F.elements[dst].value); 
+		var val = parseInt(F.elements[dst].value);
 		if(isNaN(val)){
 			alert(d+'日: 昨年度の売上金額に有効な数値を入力してください');
 			F.elements[dst].value = 0;
@@ -235,7 +223,7 @@ function setSum(F,offset)
 		}
 //
 		var dst = 'result['+a+']';
-		var val = parseInt(F.elements[dst].value); 
+		var val = parseInt(F.elements[dst].value);
 		if(isNaN(val)){
 			alert(d+'日: 売上金額に有効な数値を入力してください');
 			F.elements[dst].value = 0;
@@ -245,7 +233,7 @@ function setSum(F,offset)
 		}
 //
 		var dst = 'book['+a+']';
-		var val = parseInt(F.elements[dst].value); 
+		var val = parseInt(F.elements[dst].value);
 		if(isNaN(val)){
 			alert(d+'日: 取りおきに有効な数値を入力してください');
 			F.elements[dst].value = 0;
@@ -253,18 +241,9 @@ function setSum(F,offset)
 		else{
 			bSum += val;
 		}
-		var dst = 'apre['+a+']';
-		var val = parseInt(F.elements[dst].value); 
-		if(isNaN(val)){
-			alert(d+'日: 前受に有効な数値を入力してください');
-			F.elements[dst].value = 0;
-		}
-		else{
-			bSum += val;
-		}
 //
 		var dst = 'member['+a+']';
-		var val = parseInt(F.elements[dst].value); 
+		var val = parseInt(F.elements[dst].value);
 		if(isNaN(val)){
 			alert(d+'日: 顧客に有効な数値を入力してください');
 			F.elements[dst].value = 0;
@@ -275,7 +254,7 @@ function setSum(F,offset)
 //
 //
 		var dst = 'myen['+a+']';
-		var val = parseInt(F.elements[dst].value); 
+		var val = parseInt(F.elements[dst].value);
 		if(isNaN(val)){
 			alert(d+'日: 顧客買上金額に有効な数値を入力してください');
 			F.elements[dst].value = 0;
@@ -286,7 +265,7 @@ function setSum(F,offset)
 //
 //
 		var dst = 'mlot['+a+']';
-		var val = parseInt(F.elements[dst].value); 
+		var val = parseInt(F.elements[dst].value);
 		if(isNaN(val)){
 			alert(d+'日: 顧客買上数に有効な数値を入力してください');
 			F.elements[dst].value = 0;
@@ -296,7 +275,7 @@ function setSum(F,offset)
 		}
 //
 		var dst = 'visitor['+a+']';
-		var val = parseInt(F.elements[dst].value); 
+		var val = parseInt(F.elements[dst].value);
 		if(isNaN(val)){
 			alert(d+'日: 客数に有効な数値を入力してください');
 			F.elements[dst].value = 0;
@@ -318,7 +297,7 @@ function setSum(F,offset)
 	var day = document.getElementById(sprintf("day%02d",offset));
 	day.style.backgroundColor = "#99FFFF";
 	F.elements['exec'].disabled = '';
-//	
+//
 }
 		</script>
 				<script language="JavaScript" type="text/javascript">
@@ -334,7 +313,6 @@ function checkTheList(F)
 	var tSum = parseInt(F.elements['tSum'].value);
 	var lSum = parseInt(F.elements['lSum'].value);
 	var bSum = parseInt(F.elements['bSum'].value);
-	var aSum = parseInt(F.elements['aSum'].value); // 2019-12-27
 	var mSum = parseInt(F.elements['mSum'].value);
 	var vSum = parseInt(F.elements['vSum'].value);
 
@@ -376,7 +354,6 @@ function checkTheList(F)
 		ask[a++] = sprintf("予算計:%s %s",number_format(tSum,0),cname);
 		ask[a++] = sprintf("売上計:%s %s",number_format(rSum,0),cname);
 		ask[a++] = sprintf("取りおき計:%s %s",number_format(bSum,0),cname);
-		ask[a++] = sprintf("前受計:%s %s",number_format(aSum,0),cname);
 		ask[a++] = sprintf("顧客:%s名",number_format(mSum,0));
 		ask[a++] = sprintf("客数:%s名",number_format(vSum,0));
 		ask[a++] = sprintf("顧客買上数計:%s件",number_format(mLSum,0));
@@ -400,7 +377,7 @@ function checkTheList(F)
 						<label><input type="radio" name="delimiter" id="delimiter" value="32" />スペース</label>						</td>
 				</tr>
 				<tr>
-						<td class="th-edit">テキスト 
+						<td class="th-edit">テキスト
 								<script type="text/javascript">
 function zoomArea(F)
 {
@@ -433,16 +410,16 @@ function importCSV(F)
 		var d = src[0];
 		var p = src[1];
 		var n = src[2];
-		
+
 		if(d>0 && d<=days){
 			var offset = d-1; // しゃあない
-			
+
 			var dst = sprintf("last[%d]",offset);
 			F.elements[dst].value = p;
-			
+
 			var dst = sprintf("target[%d]",offset);
 			F.elements[dst].value = n;
-	
+
 			setSum(F,offset);
 			vd++;
 		}
@@ -471,7 +448,6 @@ function importCSV(F)
 						<td width="1%" class="th-edit">予算</td>
 						<td width="95%" class="th-edit">売上</td>
 						<td width="95%" class="th-edit">取りおき</td>
-						<td width="95%" class="th-edit">前受</td>
 						<td width="95%" class="th-edit">客数</td>
 						<td width="95%" class="th-edit">顧客カード</td>
 						<td width="95%" class="th-edit"><span title="顧客買上数">顧客買上数</span></td>
@@ -486,7 +462,7 @@ function zoomTA(dst,onoff)
 				</tr>
 				<?php
 	$days = date("t",strtotime(sprintf("%d-%d-1",$thisY,$thisM))); // この月が何日あるか
-	$dow = date("w",strtotime(sprintf("%d-%d-1",$thisY,$thisM))); // 
+	$dow = date("w",strtotime(sprintf("%d-%d-1",$thisY,$thisM))); //
 	$tu = strtotime(date("Y-m-d"));
 	$week = array('日','月','火','水','木','金','土');
 
@@ -494,7 +470,6 @@ function zoomTA(dst,onoff)
 	$tSum = 0;
 	$rSum = 0;
 	$bSum = 0;
-	$aSum = 0; // 2019-12-27
 	$mSum = 0;
 	$vSum = 0;
 	$mLSum = 0;
@@ -506,15 +481,10 @@ function zoomTA(dst,onoff)
 ?><!-- <?php printf("Query (%d) [ %s ]\n",$qr,$query); ?> --><?php
 		if($qs = pg_num_rows($qr)){
 			$qo = pg_fetch_array($qr);
-//			$target = $qo['tbase'];
-			$target = $qo['target'];
-//			$result = $qo['rbase'];
-			$result = $qo['result']; // 2020-01-21
-//			$book = $qo['bbase'];
-			$book = $qo['book'];
-			$apre = $qo['apay']; // 2019-12-27
-//			$last = $qo['lbase'];
-			$last = $qo['last'];
+			$target = $qo['tbase'];
+			$result = $qo['rbase'];
+			$book = $qo['bbase'];
+			$last = $qo['lbase'];
 			$member = $qo['member'];
 			$visitor = $qo['visitor'];
 			$note = $qo['note']? $qo['note']:'　';
@@ -525,11 +495,9 @@ function zoomTA(dst,onoff)
 //
 		}
 		else{
-?><!-- <?php printf("No records"); ?> --><?php
 			$target = 0;
 			$result = 0;
 			$book = 0;
-			$apre = 0; // 2019-12-27
 			$last = 0;
 			$member = 0;
 			$visitor = 0;
@@ -548,7 +516,6 @@ function zoomTA(dst,onoff)
 		$tSum += $target;
 		$rSum += $result;
 		$bSum += $book;
-		$aSum += $apre; // 2019-12-27
 		$mSum += $member;
 		$vSum += $visitor;
 
@@ -576,7 +543,6 @@ function zoomTA(dst,onoff)
 						<input title="売上" name="result[<?php printf("%d",$a); ?>]" type="text" class="input-Digit" id="result[<?php printf("%d",$a); ?>]" onchange="setSum(this.form,<?php printf("%d",$a); ?>)" value="<?php printf("%d",$result); ?>" size="8" maxlength="8" />
 						</label></td>
 						<td class="td-editDigit"><input title="取りおき" name="book[<?php printf("%d",$a); ?>]" type="text" class="input-Digit" id="book[<?php printf("%d",$a); ?>]" onchange="setSum(this.form,<?php printf("%d",$a); ?>)" value="<?php printf("%d",$book); ?>" size="8" maxlength="8" /></td>
-						<td class="td-editDigit"><input title="前受" name="apre[<?php printf("%d",$a); ?>]" type="text" class="input-Digit" id="apre[<?php printf("%d",$a); ?>]" onchange="setSum(this.form,<?php printf("%d",$a); ?>)" value="<?php printf("%d",$apre); ?>" size="8" maxlength="8" /></td>
 						<td class="td-editDigit"><input title="客数" name="visitor[<?php printf("%d",$a); ?>]" type="text" class="input-Digit" id="visitor[<?php printf("%d",$a); ?>]" onchange="setSum(this.form,<?php printf("%d",$a); ?>)" value="<?php printf("%d",$visitor); ?>" size="3" maxlength="8" /></td>
 						<td class="td-editDigit"><input title="新規顧客カード数" name="member[<?php printf("%d",$a); ?>]" type="text" class="input-Digit" id="member[<?php printf("%d",$a); ?>]" onchange="setSum(this.form,<?php printf("%d",$a); ?>)" value="<?php printf("%d",$member); ?>" size="3" maxlength="8" /></td>
 						<td class="td-editDigit"><input title="顧客買上数" name="mlot[<?php printf("%d",$a); ?>]" type="text" class="input-Digit" id="mlot[<?php printf("%d",$a); ?>]" onchange="setSum(this.form,<?php printf("%d",$a); ?>)" value="<?php printf("%d",$mlot); ?>" size="3" maxlength="8" /></td>
@@ -597,19 +563,17 @@ function zoomTA(dst,onoff)
 						<td class="th-editDigit"><input name="tSum" type="text" class="input-Digit" id="tSum" value="<?php printf("%d",$tSum); ?>" size="8" maxlength="12" readonly="true" /></td>
 						<td class="th-editDigit"><input name="rSum" type="text" class="input-Digit" id="rSum" value="<?php printf("%d",$rSum); ?>" size="8" maxlength="12" readonly="true" /></td>
 						<td class="th-editDigit"><input name="bSum" type="text" class="input-Digit" id="bSum" value="<?php printf("%d",$bSum); ?>" size="8" maxlength="12" readonly="true" /></td>
-						<td class="th-editDigit"><input name="aSum" type="text" class="input-Digit" id="aSum" value="<?php printf("%d",$aSum); ?>" size="8" maxlength="12" readonly="readonly" /></td>
 						<td class="th-editDigit"><input name="vSum" type="text" class="input-Digit" id="vSum" value="<?php printf("%d",$vSum); ?>" size="6" maxlength="6" readonly="true" /></td>
 						<td class="th-editDigit"><input name="mSum" type="text" class="input-Digit" id="mSum" value="<?php printf("%d",$mSum); ?>" size="6" maxlength="6" readonly="true" /></td>
 						<td class="th-editDigit"><input name="mLSum" type="text" class="input-Digit" id="mLSum" value="<?php printf("%d",$mLSum); ?>" size="6" maxlength="6" readonly="true" /></td>
 						<td class="th-editDigit"><input name="mYSum" type="text" class="input-Digit" id="mYSum" value="<?php printf("%d",$mYSum); ?>" size="6" maxlength="6" readonly="true" /></td>
 						<td class="th-editDigit">
-						<input name="dtp" type="hidden" id="dtp" value="<?php echo($dtp); ?>" />
-				  <input name="exec" type="submit" disabled="disabled" id="exec" value="登録" /></td>
+						<input name="exec" type="submit" disabled="disabled" id="exec" value="登録" /></td>
 				</tr>
 		</table>
 		<label>
 		<input name="mode" type="hidden" id="mode" value="psave" />
-  </label>
+		</label>
 		<label>
 		<input name="yy" type="hidden" id="yy" value="<?php printf("%d",$thisY);?>" />
 		</label>
